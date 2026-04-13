@@ -2,104 +2,136 @@
 <testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-13T13:45:51 EDT" name="Default suite" finished-at="2026-04-13T13:46:07 EDT" duration-ms="16232">
+  <suite started-at="2026-04-13T15:21:24 EDT" name="Default suite" finished-at="2026-04-13T15:21:40 EDT" duration-ms="15770">
     <groups>
     </groups>
-    <test started-at="2026-04-13T13:45:51 EDT" name="Default test" finished-at="2026-04-13T13:46:07 EDT" duration-ms="16232">
+    <test started-at="2026-04-13T15:21:24 EDT" name="Default test" finished-at="2026-04-13T15:21:40 EDT" duration-ms="15770">
       <class name="tests.FilterTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:51 EDT" name="setup" finished-at="2026-04-13T13:45:53 EDT" duration-ms="2071" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:24 EDT" name="setup" finished-at="2026-04-13T15:21:26 EDT" duration-ms="2026" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LangaugeFilterTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:53 EDT" name="LangaugeFilterTest" finished-at="2026-04-13T13:45:53 EDT" duration-ms="279" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:26 EDT" name="initPage" finished-at="2026-04-13T15:21:26 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LangaugeFilterTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:53 EDT" name="tearDown" finished-at="2026-04-13T13:45:53 EDT" duration-ms="185" status="PASS">
+        </test-method> <!-- initPage -->
+        <test-method signature="combinedFiltersTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:26 EDT" name="combinedFiltersTest" finished-at="2026-04-13T15:21:27 EDT" duration-ms="583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- combinedFiltersTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:27 EDT" name="tearDown" finished-at="2026-04-13T15:21:27 EDT" duration-ms="159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:53 EDT" name="setup" finished-at="2026-04-13T13:45:55 EDT" duration-ms="1354" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:27 EDT" name="setup" finished-at="2026-04-13T15:21:29 EDT" duration-ms="1328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LevelFilterTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:55 EDT" name="LevelFilterTest" finished-at="2026-04-13T13:45:55 EDT" duration-ms="316" status="PASS">
+        <test-method signature="languageFilterTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:29 EDT" name="languageFilterTest" finished-at="2026-04-13T15:21:29 EDT" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LevelFilterTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:55 EDT" name="tearDown" finished-at="2026-04-13T13:45:55 EDT" duration-ms="198" status="PASS">
+        </test-method> <!-- languageFilterTest -->
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:29 EDT" name="initPage" finished-at="2026-04-13T15:21:29 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:29 EDT" name="tearDown" finished-at="2026-04-13T15:21:29 EDT" duration-ms="150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:55 EDT" name="setup" finished-at="2026-04-13T13:45:57 EDT" duration-ms="1468" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:29 EDT" name="setup" finished-at="2026-04-13T15:21:30 EDT" duration-ms="1397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="combinedFilters()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:57 EDT" name="combinedFilters" finished-at="2026-04-13T13:45:57 EDT" duration-ms="559" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:30 EDT" name="initPage" finished-at="2026-04-13T15:21:30 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- combinedFilters -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:57 EDT" name="tearDown" finished-at="2026-04-13T13:45:57 EDT" duration-ms="184" status="PASS">
+        </test-method> <!-- initPage -->
+        <test-method signature="levelFilterTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:30 EDT" name="levelFilterTest" finished-at="2026-04-13T15:21:31 EDT" duration-ms="307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- levelFilterTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:31 EDT" name="tearDown" finished-at="2026-04-13T15:21:31 EDT" duration-ms="166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:57 EDT" name="setup" finished-at="2026-04-13T13:45:59 EDT" duration-ms="1342" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:31 EDT" name="setup" finished-at="2026-04-13T15:21:32 EDT" duration-ms="1310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="minEnrollmentsTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:59 EDT" name="minEnrollmentsTest" finished-at="2026-04-13T13:45:59 EDT" duration-ms="303" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:32 EDT" name="initPage" finished-at="2026-04-13T15:21:32 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- minEnrollmentsTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:59 EDT" name="tearDown" finished-at="2026-04-13T13:45:59 EDT" duration-ms="176" status="PASS">
+        </test-method> <!-- initPage -->
+        <test-method signature="minEnrollmentFilterTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:32 EDT" name="minEnrollmentFilterTest" finished-at="2026-04-13T15:21:32 EDT" duration-ms="332" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- minEnrollmentFilterTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:32 EDT" name="tearDown" finished-at="2026-04-13T15:21:33 EDT" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:45:59 EDT" name="setup" finished-at="2026-04-13T13:46:01 EDT" duration-ms="1349" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:33 EDT" name="setup" finished-at="2026-04-13T15:21:34 EDT" duration-ms="1362" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="noResultStateTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:01 EDT" name="noResultStateTest" finished-at="2026-04-13T13:46:01 EDT" duration-ms="303" status="PASS">
+        <test-method signature="noResultsStateTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:34 EDT" name="noResultsStateTest" finished-at="2026-04-13T15:21:34 EDT" duration-ms="285" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- noResultStateTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:01 EDT" name="tearDown" finished-at="2026-04-13T13:46:01 EDT" duration-ms="180" status="PASS">
+        </test-method> <!-- noResultsStateTest -->
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:34 EDT" name="initPage" finished-at="2026-04-13T15:21:34 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:34 EDT" name="tearDown" finished-at="2026-04-13T15:21:34 EDT" duration-ms="166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:01 EDT" name="setup" finished-at="2026-04-13T13:46:02 EDT" duration-ms="1327" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:34 EDT" name="setup" finished-at="2026-04-13T15:21:36 EDT" duration-ms="1292" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="resetButtonVisibilityAndBehaviourTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:02 EDT" name="resetButtonVisibilityAndBehaviourTest" finished-at="2026-04-13T13:46:03 EDT" duration-ms="480" status="PASS">
+        <test-method signature="resetButtonVisibilityAndBehaviourTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:36 EDT" name="resetButtonVisibilityAndBehaviourTest" finished-at="2026-04-13T15:21:36 EDT" duration-ms="420" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resetButtonVisibilityAndBehaviourTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:03 EDT" name="tearDown" finished-at="2026-04-13T13:46:03 EDT" duration-ms="155" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:36 EDT" name="initPage" finished-at="2026-04-13T15:21:36 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:36 EDT" name="tearDown" finished-at="2026-04-13T15:21:36 EDT" duration-ms="163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:03 EDT" name="setup" finished-at="2026-04-13T13:46:04 EDT" duration-ms="1395" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:36 EDT" name="setup" finished-at="2026-04-13T15:21:38 EDT" duration-ms="1431" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="sortByCourseName()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:04 EDT" name="sortByCourseName" finished-at="2026-04-13T13:46:05 EDT" duration-ms="522" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:38 EDT" name="initPage" finished-at="2026-04-13T15:21:38 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortByCourseName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:05 EDT" name="tearDown" finished-at="2026-04-13T13:46:05 EDT" duration-ms="170" status="PASS">
+        </test-method> <!-- initPage -->
+        <test-method signature="sortByCourseNameTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:38 EDT" name="sortByCourseNameTest" finished-at="2026-04-13T15:21:38 EDT" duration-ms="516" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sortByCourseNameTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:38 EDT" name="tearDown" finished-at="2026-04-13T15:21:38 EDT" duration-ms="143" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:05 EDT" name="setup" finished-at="2026-04-13T13:46:07 EDT" duration-ms="1333" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:38 EDT" name="setup" finished-at="2026-04-13T15:21:40 EDT" duration-ms="1298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="sortByEnrollmentsTest()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:07 EDT" name="sortByEnrollmentsTest" finished-at="2026-04-13T13:46:07 EDT" duration-ms="325" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:40 EDT" name="initPage" finished-at="2026-04-13T15:21:40 EDT" depends-on-methods="base.BaseTest.setup" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortByEnrollmentsTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@50a638b5]" started-at="2026-04-13T13:46:07 EDT" name="tearDown" finished-at="2026-04-13T13:46:07 EDT" duration-ms="186" status="PASS">
+        </test-method> <!-- initPage -->
+        <test-method signature="sortByEnrollmentTest()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:40 EDT" name="sortByEnrollmentTest" finished-at="2026-04-13T15:21:40 EDT" duration-ms="307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sortByEnrollmentTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FilterTest@1817d444]" started-at="2026-04-13T15:21:40 EDT" name="tearDown" finished-at="2026-04-13T15:21:40 EDT" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

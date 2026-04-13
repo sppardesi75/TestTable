@@ -12,49 +12,30 @@ import managers.DriverManager;
 
 public class WaitUtils {
 
-	private static WebDriverWait wait;
+    private static WebDriverWait wait;
 
-	public static void initWait() {
+    public static void initWait() {
+        int timeout = Integer.parseInt(ConfigReader.getProperty("waitTime"));
+        wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout));
+    }
 
-		wait = new WebDriverWait(DriverManager.getDriver(),
-				Duration.ofSeconds(Integer.valueOf(ConfigReader.getProperty("waitTime"))));
+    public static WebElement waitForPresence(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 
-	}
+    public static List<WebElement> waitForPresenceOfAll(By locator) {
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
 
-	public static WebDriverWait getWait() {
+    public static WebElement waitForClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 
-		return wait;
+    public static List<WebElement> waitForAllVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
 
-	}
-
-	public static WebElement getPresenceOfElement(By locator) {
-
-		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-
-	}
-
-	public static List<WebElement> getPresenceOfAllElement(By locator) {
-
-		return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-
-	}
-
-	public static WebElement getClickableElement(By locator) {
-
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-
-	}
-
-	public static List<WebElement> getAllVisibleElements(By locator) {
-
-		return WaitUtils.getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
-
-	}
-	
-	public static WebElement getVisibleElement(By locator) {
-
-		return WaitUtils.getWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
-
-	}
-
+    public static WebElement waitForVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }

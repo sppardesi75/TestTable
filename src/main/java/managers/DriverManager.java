@@ -39,7 +39,9 @@ public class DriverManager {
 	}
 	
 	public static void quitDriver() {
-		driver.quit();
+		if (driver != null) {
+            driver.quit();
+		}
 	}
 	
 	public static void goToUrl(String url) {
