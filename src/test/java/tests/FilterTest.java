@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.TestTablePage;
+import utils.CastingUtils;
+import utils.SortUtils;
 
 
 
@@ -22,7 +24,7 @@ public class FilterTest extends BaseTest {
 	@Test
 	public void LangaugeFilterTest() {
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		tp.selectLanguage("Java");
 		List<String> visibleLanguages = tp.getVisibleColumnValues(3);
 		
@@ -38,7 +40,7 @@ public class FilterTest extends BaseTest {
 	@Test
 	public void LevelFilterTest() {
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		tp.checkUncheckLevel("Intermediate");
 		tp.checkUncheckLevel("Advanced");
 		
@@ -59,7 +61,7 @@ public class FilterTest extends BaseTest {
 	public void minEnrollmentsTest() {
 		
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		tp.selectEnrollment("10000");
 		
 		List<String> visibleEnrollments = tp.getVisibleColumnValues(5);
@@ -77,7 +79,7 @@ public class FilterTest extends BaseTest {
 	@Test
 	public void combinedFilters() {
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		
 		tp.selectLanguage("Python");
 		tp.checkUncheckLevel("Intermediate");
@@ -121,7 +123,7 @@ public class FilterTest extends BaseTest {
 	@Test
 	public void noResultStateTest() {
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		tp.selectLanguage("Python");
 		tp.selectEnrollment("50000");
 		
@@ -133,7 +135,7 @@ public class FilterTest extends BaseTest {
 	@Test
 	public void resetButtonVisibilityAndBehaviourTest() {
 		
-		TestTablePage tp = new TestTablePage(wait,driver);
+		TestTablePage tp = new TestTablePage();
 		tp.selectLanguage("Java");
 		
 		assertTrue(tp.verifyResetButtonVisibility(), "Reset button not visible");
@@ -141,7 +143,7 @@ public class FilterTest extends BaseTest {
 		tp.clickReset();
 		
 		String lang = tp.getSelectedLanguage();
-		List<String> selectedLevel = tp.getSelectedLevels();
+		List<String> selectedLevel = tp.getLevels();
 		String enrollment = tp.getSelectedMinEnrollment();
 		
 		
@@ -171,6 +173,47 @@ public class FilterTest extends BaseTest {
 		assertTrue(!tp.verifyResetButtonVisibility(), "Reset button should be hidden but it is visible");
 		assertTrue(tp.verifyAllRowVisibility(), "All rows should be visible but are not");
 		
+	}
+	
+	@Test
+	public void sortByEnrollmentsTest() {
+		
+		TestTablePage tp = new TestTablePage();
+		tp.sortBy("Enrollments");
+		
+		List<String> stringEnrollments = tp.getVisibleColumnValues(5);
+		List<Integer> intEnrollments = CastingUtils.stringListToIntList(stringEnrollments);
+		
+		boolean sorted = SortUtils.verifyNumericalSort(intEnrollments);
+		
+		System.out.println(intEnrollments);
+		
+		assertTrue(sorted, "Sorting with enrollment is not correct. The order is " + intEnrollments);
+		
+		
+	}
+	
+	
+	@Test
+	public void sortByCourseName() {
+		
+		TestTablePage tp = new TestTablePage();
+		tp.sortBy("Course Name");
+		
+		List<String> courseNames = tp.getVisibleColumnValues(2); 
+		
+		boolean sorted = SortUtils.verifyAlphabeticalSort(courseNames);
+		
+		System.out.println(courseNames);
+		
+		assertTrue(sorted, "Sorting with course name is not correct. The order is" + courseNames);
+		
+		tp.checkUncheckLevel("Beginner");
+		
+		courseNames = tp.getVisibleColumnValues(2); 
+		sorted = SortUtils.verifyAlphabeticalSort(courseNames);
+		System.out.println(courseNames);
+		assertTrue(sorted, "Sorting with course name is not correct. The order is" + courseNames);
 	}
 
 }
