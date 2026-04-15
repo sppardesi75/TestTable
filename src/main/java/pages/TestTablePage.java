@@ -9,10 +9,11 @@ import org.openqa.selenium.support.ui.Select;
 
 import utils.UiActions;
 import utils.WaitUtils;
+import managers.ExtentTestManager;
 
 public class TestTablePage {
 
-    // ── Locators ─────────────────────────────────────────────────────────────
+    //  Locators
     private static final By ALL_LANGUAGE_RADIOS  = By.xpath("//input[@type='radio']");
     private static final By ALL_LEVEL_CHECKBOXES = By.xpath("//input[@type='checkbox']");
     private static final By SELECTED_ENROLLMENT  = By.xpath("//li[@role='option' and @aria-selected='true']");
@@ -28,37 +29,40 @@ public class TestTablePage {
     private static final String TABLE_COLUMN_XPATH     = "//table//tr/td[%d]";
     private static final String ENROLLMENT_OPTION_XPATH = "//li[@data-value='%s']";
 
-    // ── Filter actions ────────────────────────────────────────────────────────
+    //  Filter actions 
 
     public void selectLanguage(String language) {
         By locator = By.xpath(String.format(LANGUAGE_RADIO_XPATH, language));
-        UiActions.click(WaitUtils.waitForClickable(locator));
+        UiActions.click(WaitUtils.waitForClickable(locator), "Language Radio - " + language);
     }
 
     public void checkUncheckLevel(String level) {
         By locator = By.xpath(String.format(LEVEL_CHECKBOX_XPATH, level));
-        UiActions.click(WaitUtils.waitForClickable(locator));
+        UiActions.click(WaitUtils.waitForClickable(locator), "Level Checkbox - " + level);
     }
 
     public void selectEnrollment(String value) {
-        UiActions.click(WaitUtils.waitForClickable(DROPDOWN_BUTTON));
+        UiActions.click(WaitUtils.waitForClickable(DROPDOWN_BUTTON), "Enrollment Dropdown Button");
         By optionLocator = By.xpath(String.format(ENROLLMENT_OPTION_XPATH, value));
-        UiActions.click(WaitUtils.waitForClickable(optionLocator));
+        UiActions.click(WaitUtils.waitForClickable(optionLocator), "Enrollment Option - " + value);
     }
 
     public void sortBy(String visibleText) {
         WebElement dropdown = WaitUtils.waitForVisible(SORT_DROPDOWN);
         new Select(dropdown).selectByVisibleText(visibleText);
+        ExtentTestManager.log.info("Sorted table by: " + visibleText);
     }
 
     public void clickReset() {
         WebElement resetBtn = WaitUtils.waitForPresence(RESET_BUTTON);
         if (resetBtn.isDisplayed()) {
-            resetBtn.click();
+            UiActions.click(resetBtn, "Reset Button");
+        } else {
+            ExtentTestManager.log.info("Reset button is not visible, skipping click");
         }
     }
 
-    // ── Table data queries ────────────────────────────────────────────────────
+    // Table data queries
 
     public List<WebElement> getAllRows() {
         return WaitUtils.waitForPresenceOfAll(ALL_TABLE_ROWS);
@@ -71,6 +75,7 @@ public class TestTablePage {
                 visibleRows.add(row);
             }
         }
+        ExtentTestManager.log.info("Visible table row count: " + visibleRows.size());
         return visibleRows;
     }
 
@@ -79,26 +84,34 @@ public class TestTablePage {
         List<String> values = new ArrayList<>();
         for (WebElement cell : WaitUtils.waitForPresenceOfAll(colLocator)) {
             if (cell.isDisplayed()) {
-                values.add(cell.getText());
+                values.add(UiActions.getText(cell, "Table Cell - Column " + colIndex));
             }
         }
         return values;
     }
 
-    // ── State / verification queries ──────────────────────────────────────────
+    //  State / verification queries 
 
     public boolean isNoDataMessageDisplayed() {
-        return WaitUtils.waitForPresence(NO_DATA_MESSAGE).isDisplayed();
+        boolean result = WaitUtils.waitForPresence(NO_DATA_MESSAGE).isDisplayed();
+        ExtentTestManager.log.info("No data message displayed: " + result);
+        return result;
     }
 
     public boolean isResetButtonVisible() {
-        return WaitUtils.waitForPresence(RESET_BUTTON).isDisplayed();
+        boolean result = WaitUtils.waitForPresence(RESET_BUTTON).isDisplayed();
+        ExtentTestManager.log.info("Reset button visible: " + result);
+        return result;
     }
 
     public boolean areAllRowsVisible() {
         for (WebElement row : getAllRows()) {
-            if (!row.isDisplayed()) return false;
+            if (!row.isDisplayed()) {
+                ExtentTestManager.log.info("areAllRowsVisible: false — at least one row is hidden");
+                return false;
+            }
         }
+        ExtentTestManager.log.info("areAllRowsVisible: true — all rows are visible");
         return true;
     }
 
@@ -106,7 +119,7 @@ public class TestTablePage {
     public String getSelectedLanguage() {
         for (WebElement radio : WaitUtils.waitForAllVisible(ALL_LANGUAGE_RADIOS)) {
             if (radio.isSelected()) {
-                return radio.getAttribute("value");
+                return UiActions.getAttribute(radio, "value", "Selected Language Radio");
             }
         }
         return null;
@@ -117,13 +130,13 @@ public class TestTablePage {
         List<String> selected = new ArrayList<>();
         for (WebElement checkbox : WaitUtils.waitForAllVisible(ALL_LEVEL_CHECKBOXES)) {
             if (checkbox.isSelected()) {
-                selected.add(checkbox.getAttribute("value"));
+                selected.add(UiActions.getAttribute(checkbox, "value", "Selected Level Checkbox"));
             }
         }
         return selected.isEmpty() ? null : selected;
     }
 
     public String getSelectedMinEnrollment() {
-        return WaitUtils.waitForPresence(SELECTED_ENROLLMENT).getAttribute("data-value");
+        return UiActions.getAttribute(WaitUtils.waitForPresence(SELECTED_ENROLLMENT), "data-value", "Selected Min Enrollment");
     }
 }

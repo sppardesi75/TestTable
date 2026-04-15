@@ -12,6 +12,7 @@ public class DriverManager {
 	private static WebDriver driver;
 	
 	public static void initDriver() {
+		boolean notSupported = false;
 		
 		String browser =  ConfigReader.getProperty("browser");
 		switch(browser.toLowerCase()) {
@@ -26,12 +27,17 @@ public class DriverManager {
 			driver = new EdgeDriver();
 			break;
 		default:
-			System.out.println("Browser not supported");
+			ExtentTestManager.log.info("Browser not supported");
+			notSupported = true;
 			break;
 		
 		}
-		driver.manage().window().maximize();
+		if(notSupported) {
+			ExtentTestManager.log.info(browser + " brower is launched!!");
+		}
 		
+		driver.manage().window().maximize();
+		ExtentTestManager.log.info("Browser window was maximized!!");
 	}
 	
 	public static WebDriver getDriver() {
@@ -41,12 +47,14 @@ public class DriverManager {
 	public static void quitDriver() {
 		if (driver != null) {
             driver.quit();
+            ExtentTestManager.log.info("Browser window was closed");
 		}
 	}
 	
 	public static void goToUrl(String url) {
 		
 		driver.get(url);
+		ExtentTestManager.log.info("URL:" + url + "opened");
 	}
 
 }
