@@ -23,7 +23,7 @@ public class TestTablePage {
     private static final By RESET_BUTTON          = By.id("resetFilters");
     private static final By SORT_DROPDOWN         = By.tagName("select");
 
-    // Parameterised XPath templates
+    // Parameterized XPath templates
     private static final String LANGUAGE_RADIO_XPATH   = "//input[@type='radio' and @value='%s']";
     private static final String LEVEL_CHECKBOX_XPATH   = "//input[@type='checkbox' and @value='%s']";
     private static final String TABLE_COLUMN_XPATH     = "//table//tr/td[%d]";

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\San\AppData\Local\Temp\testng-eclipse--1878678395\testng-customsuite.xml</span>
+                    <span>C:\Users\San\AppData\Local\Temp\testng-eclipse-1193227472\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="tests.FilterTest" class="method navigator-link" hash-for-method="minEnrollmentFilterTest">minEnrollmentFilterTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,11 +128,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="tests.FilterTest" class="method navigator-link" hash-for-method="levelFilterTest">levelFilterTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="tests.FilterTest" class="method navigator-link" hash-for-method="minEnrollmentFilterTest">minEnrollmentFilterTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -153,6 +162,54 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.FilterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="minEnrollmentFilterTest">
+                  </a> <!-- minEnrollmentFilterTest -->
+                  <span class="method-name">minEnrollmentFilterTest</span>
+                  <div class="stack-trace">java.lang.NumberFormatException: For input string: &quot;Beginner&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:527)
+	at java.base/java.lang.Integer.parseInt(Integer.java:624)
+	at tests.FilterTest.minEnrollmentFilterTest(FilterTest.java:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -178,13 +235,6 @@
                   <a name="levelFilterTest">
                   </a> <!-- levelFilterTest -->
                   <span class="method-name">levelFilterTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="minEnrollmentFilterTest">
-                  </a> <!-- minEnrollmentFilterTest -->
-                  <span class="method-name">minEnrollmentFilterTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -220,7 +270,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\San\AppData\Local\Temp\testng-eclipse--1878678395\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\San\AppData\Local\Temp\testng-eclipse-1193227472\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -273,23 +323,23 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'combinedFiltersTest')
 data.setCell(0, 2, 'tests.FilterTest')
-data.setCell(0, 3, 604);
+data.setCell(0, 3, 644);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'sortByCourseNameTest')
 data.setCell(1, 2, 'tests.FilterTest')
-data.setCell(1, 3, 506);
+data.setCell(1, 3, 530);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'resetButtonVisibilityAndBehaviourTest')
 data.setCell(2, 2, 'tests.FilterTest')
-data.setCell(2, 3, 436);
+data.setCell(2, 3, 442);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'sortByEnrollmentTest')
 data.setCell(3, 2, 'tests.FilterTest')
-data.setCell(3, 3, 321);
+data.setCell(3, 3, 334);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'levelFilterTest')
 data.setCell(4, 2, 'tests.FilterTest')
-data.setCell(4, 3, 314);
+data.setCell(4, 3, 325);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'minEnrollmentFilterTest')
 data.setCell(5, 2, 'tests.FilterTest')
@@ -297,11 +347,11 @@ data.setCell(5, 3, 311);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'noResultsStateTest')
 data.setCell(6, 2, 'tests.FilterTest')
-data.setCell(6, 3, 277);
+data.setCell(6, 3, 309);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'languageFilterTest')
 data.setCell(7, 2, 'tests.FilterTest')
-data.setCell(7, 3, 245);
+data.setCell(7, 3, 271);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -339,135 +389,137 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.combinedFiltersTest())</span>
-                <span class="method-start">332 ms</span>
+                <span class="method-start">323 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">4087 ms</span>
+                <span class="method-start">2295 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">combinedFiltersTest</span>
-                <span class="method-start">4090 ms</span>
+                <span class="method-start">2299 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">4696 ms</span>
+                <span class="method-name">tearDown([TestResult name=combinedFiltersTest status=SUCCESS method=FilterTest.combinedFiltersTest()[pri:0, i...)</span>
+                <span class="method-start">2947 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.languageFilterTest())</span>
-                <span class="method-start">4884 ms</span>
+                <span class="method-start">3091 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">6296 ms</span>
+                <span class="method-start">4415 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">languageFilterTest</span>
-                <span class="method-start">6297 ms</span>
+                <span class="method-start">4416 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">6543 ms</span>
+                <span class="method-name">tearDown([TestResult name=languageFilterTest status=SUCCESS method=FilterTest.languageFilterTest()[pri:0, ins...)</span>
+                <span class="method-start">4688 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.levelFilterTest())</span>
-                <span class="method-start">6712 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">initPage</span>
-                <span class="method-start">8096 ms</span>
+                <span class="method-start">4814 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">levelFilterTest</span>
-                <span class="method-start">8097 ms</span>
+                <span class="method-start">6129 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initPage</span>
+                <span class="method-start">6129 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">8412 ms</span>
+                <span class="method-name">tearDown([TestResult name=levelFilterTest status=SUCCESS method=FilterTest.levelFilterTest()[pri:0, instance:...)</span>
+                <span class="method-start">6456 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.minEnrollmentFilterTest())</span>
-                <span class="method-start">8575 ms</span>
+                <span class="method-start">6597 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">9920 ms</span>
+                <span class="method-start">7991 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">minEnrollmentFilterTest</span>
-                <span class="method-start">9921 ms</span>
+                <span class="method-start">7992 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">10233 ms</span>
+                <span class="method-name">tearDown([TestResult name=minEnrollmentFilterTest status=FAILURE method=FilterTest.minEnrollmentFilterTest()[...)</span>
+                <span class="method-start">8305 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.noResultsStateTest())</span>
-                <span class="method-start">10394 ms</span>
+                <span class="method-start">8572 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">11746 ms</span>
+                <span class="method-start">9922 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">noResultsStateTest</span>
-                <span class="method-start">11747 ms</span>
+                <span class="method-start">9923 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">12025 ms</span>
+                <span class="method-name">tearDown([TestResult name=noResultsStateTest status=SUCCESS method=FilterTest.noResultsStateTest()[pri:0, ins...)</span>
+                <span class="method-start">10233 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.resetButtonVisibilityAndBehaviourTest())</span>
-                <span class="method-start">12163 ms</span>
+                <span class="method-start">10377 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">13480 ms</span>
+                <span class="method-start">11733 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">resetButtonVisibilityAndBehaviourTest</span>
-                <span class="method-start">13481 ms</span>
+                <span class="method-start">11734 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">13918 ms</span>
+                <span class="method-name">tearDown([TestResult name=resetButtonVisibilityAndBehaviourTest status=SUCCESS method=FilterTest.resetButtonV...)</span>
+                <span class="method-start">12177 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.sortByCourseNameTest())</span>
-                <span class="method-start">14058 ms</span>
+                <span class="method-start">12329 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initPage</span>
-                <span class="method-start">15428 ms</span>
+                <span class="method-start">13641 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">sortByCourseNameTest</span>
-                <span class="method-start">15429 ms</span>
+                <span class="method-start">13641 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">15936 ms</span>
+                <span class="method-name">tearDown([TestResult name=sortByCourseNameTest status=SUCCESS method=FilterTest.sortByCourseNameTest()[pri:0,...)</span>
+                <span class="method-start">14171 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void tests.FilterTest.sortByEnrollmentTest())</span>
-                <span class="method-start">16096 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">initPage</span>
-                <span class="method-start">17429 ms</span>
+                <span class="method-start">14330 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">sortByEnrollmentTest</span>
-                <span class="method-start">17429 ms</span>
+                <span class="method-start">15698 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">initPage</span>
+                <span class="method-start">15698 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">17751 ms</span>
+                <span class="method-name">tearDown([TestResult name=sortByEnrollmentTest status=SUCCESS method=FilterTest.sortByEnrollmentTest()[pri:0,...)</span>
+                <span class="method-start">16034 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDownSuite</span>
-                <span class="method-start">18006 ms</span>
+                <span class="method-start">16203 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

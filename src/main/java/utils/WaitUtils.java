@@ -16,7 +16,7 @@ public class WaitUtils {
     private static WebDriverWait wait;
 
     public static void initWait() {
-        int timeout = Integer.parseInt(ConfigReader.getProperty("waitTime"));
+        int timeout = Integer.parseInt(BaseUtils.getProperty("waitTime"));
         wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout));
         ExtentTestManager.log.info("WebDriverWait initialized with timeout: " + timeout + " seconds");
     }

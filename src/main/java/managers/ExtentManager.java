@@ -7,7 +7,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import utils.ConfigReader;
+import utils.BaseUtils;
 
 public class ExtentManager {
 	
@@ -23,8 +23,8 @@ public class ExtentManager {
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		
-		spark.config().setDocumentTitle(ConfigReader.getProperty("documentTitle"));
-		spark.config().setReportName(ConfigReader.getProperty("reportName"));
+		spark.config().setDocumentTitle(BaseUtils.getProperty("documentTitle"));
+		spark.config().setReportName(BaseUtils.getProperty("reportName"));
 		spark.config().setTheme(Theme.DARK);
 		
 	}

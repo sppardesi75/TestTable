@@ -6,16 +6,11 @@
       <class name="tests.FilterTest">
         <methods>
           <include name="setup"/>
-          <include name="levelFilterTest"/>
           <include name="tearDown"/>
-          <include name="sortByCourseNameTest"/>
-          <include name="resetButtonVisibilityAndBehaviourTest"/>
-          <include name="noResultsStateTest"/>
+          <include name="setupSuite"/>
           <include name="initPage"/>
-          <include name="sortByEnrollmentTest"/>
-          <include name="combinedFiltersTest"/>
           <include name="minEnrollmentFilterTest"/>
-          <include name="languageFilterTest"/>
+          <include name="tearDownSuite"/>
         </methods>
       </class> <!-- tests.FilterTest -->
     </classes>

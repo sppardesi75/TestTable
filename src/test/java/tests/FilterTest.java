@@ -64,7 +64,7 @@ public class FilterTest extends BaseTest {
         tablePage.selectEnrollment("10000");
 
         ExtentTestManager.log.info("Verifying all visible rows have enrollment >= 10000");
-        for (String enrollment : tablePage.getVisibleColumnValues(5)) {
+        for (String enrollment : tablePage.getVisibleColumnValues(4)) {
             assertTrue(
                 Integer.parseInt(enrollment) >= 10000,
                 "Expected >= 10000 but found: " + enrollment

@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import utils.ConfigReader;
+import utils.BaseUtils;
 
 public class DriverManager {
 	
@@ -14,7 +14,7 @@ public class DriverManager {
 	public static void initDriver() {
 		boolean notSupported = false;
 		
-		String browser =  ConfigReader.getProperty("browser");
+		String browser =  BaseUtils.getProperty("browser");
 		switch(browser.toLowerCase()) {
 		
 		case "chrome":
@@ -54,7 +54,7 @@ public class DriverManager {
 	public static void goToUrl(String url) {
 		
 		driver.get(url);
-		ExtentTestManager.log.info("URL:" + url + "opened");
+		ExtentTestManager.log.info("URL: " + url + " opened");
 	}
 
 }
